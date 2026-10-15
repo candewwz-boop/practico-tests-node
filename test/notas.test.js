@@ -1,6 +1,6 @@
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
-import { clasificar } from '../src/notas.js';
+import { clasificar, promedio } from '../src/notas.js';
 
 describe('clasificar', () => {
   test('3.99 es LIBRE (justo debajo del límite 4)', () => {
@@ -25,5 +25,19 @@ describe('clasificar', () => {
 
   test('11 lanza RangeError (fuera de rango)', () => {
     assert.throws(() => clasificar(11), RangeError);
+  });
+});
+
+describe('promedio', () => {
+  test('[6, 8, 10] da 8', () => {
+    assert.equal(promedio([6, 8, 10]), 8);
+  });
+
+  test('una sola nota devuelve esa nota', () => {
+    assert.equal(promedio([7]), 7);
+  });
+
+  test('lista vacía lanza error', () => {
+    assert.throws(() => promedio([]));
   });
 });
