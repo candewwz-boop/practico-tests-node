@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { sumar } from '../src/calculadora.js';
+import { sumar, dividir } from '../src/calculadora.js';
 
 test('sumar 2 + 3 devuelve 5', () => {
   // Arrange (preparar): los datos de entrada
@@ -17,4 +17,12 @@ test('sumar 2 + 3 devuelve 5', () => {
 test('sumar -4 + 1 devuelve -3', () => {
   const resultado = sumar(-4, 1);
   assert.equal(resultado, -3);
+});
+
+test('dividir 10 / 2 devuelve 5', () => {
+  assert.equal(dividir(10, 2), 5);
+});
+
+test('dividir 10 / 0 lanza un error', () => {
+  assert.throws(() => dividir(10, 0), { message: 'No se puede dividir por cero' });
 });
