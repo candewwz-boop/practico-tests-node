@@ -8,3 +8,6 @@ export function promedio(notas) {
   if (notas.length === 0) throw new Error('La lista de notas está vacía');
   return notas.reduce((acc, n) => acc + n, 0) / notas.length;
 }
+export function aprobados(notas) {
+  return notas.filter((n) => n >= 6);
+}
