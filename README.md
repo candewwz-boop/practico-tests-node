@@ -1,3 +1,4 @@
+![Tests](https://github.com/candewwz-boop/practico-tests-node/actions/workflows/tests.yml/badge.svg)
 # practico-tests-node
 
 Ejercicio 4
